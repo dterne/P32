@@ -2,7 +2,6 @@ package prog2.vista;
 
 import prog2.adaptador.Adaptador;
 import prog2.vista.BiblioException;
-
 import javax.swing.*;
 
 public class AppBiblioUB extends JFrame {
@@ -24,17 +23,17 @@ public class AppBiblioUB extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         btnGestioUsuaris.addActionListener(e -> {
-            FrmGestioUsuaris frm = new FrmGestioUsuaris(this, adaptador);
+            GestioUsuaris frm = new GestioUsuaris(this, adaptador);
             frm.setVisible(true);
         });
 
         btnGestioExemplars.addActionListener(e -> {
-            FrmGestioExemplars frm = new FrmGestioExemplars(this, adaptador);
+            GestioExemplars frm = new GestioExemplars(this, adaptador);
             frm.setVisible(true);
         });
 
         btnGestioPrestecs.addActionListener(e -> {
-            FrmGestioPrestecs frm = new FrmGestioPrestecs(this, adaptador);
+            GestioPrestecs frm = new GestioPrestecs(this, adaptador);
             frm.setVisible(true);
         });
 
