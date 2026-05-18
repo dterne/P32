@@ -1,7 +1,6 @@
 package prog2.vista;
 
 import prog2.adaptador.Adaptador;
-import prog2.vista.BiblioException;
 import javax.swing.*;
 
 public class AppBiblioUB extends JFrame {
@@ -48,3 +47,23 @@ public class AppBiblioUB extends JFrame {
                 }
             }
         });
+
+        btnCarregar.addActionListener(e -> {
+            JFileChooser chooser = new JFileChooser();
+            if (chooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
+                try {
+                    adaptador.carregaDades(chooser.getSelectedFile().getAbsolutePath());
+                    JOptionPane.showMessageDialog(this, "Dades carregades correctament.");
+                } catch (BiblioException ex) {
+                    JOptionPane.showMessageDialog(this, ex.getMessage());
+                }
+            }
+        });
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> {
+            new AppBiblioUB().setVisible(true);
+        });
+    }
+}
