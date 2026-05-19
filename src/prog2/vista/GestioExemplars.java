@@ -63,7 +63,7 @@ public class GestioExemplars extends JDialog {
         panelMain = new JPanel(new BorderLayout(10, 10));
         panelMain.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
 
-        // ===== PANEL FORMULARI (entrada de dades) =====
+        // Panel formulari
         JPanel panelFormulari = new JPanel(new GridBagLayout());
         panelFormulari.setBorder(BorderFactory.createTitledBorder("Afegir Nou Exemplar"));
         GridBagConstraints gbc = new GridBagConstraints();
@@ -91,14 +91,14 @@ public class GestioExemplars extends JDialog {
         txtAutor = new JTextField(20);
         panelFormulari.add(txtAutor, gbc);
 
-        // Admet préstec llarg (CheckBox)
+        // Admet préstec llarg
         gbc.gridx = 0; gbc.gridy = 3;
         panelFormulari.add(new JLabel("Préstec llarg:"), gbc);
         gbc.gridx = 1; gbc.gridy = 3;
         chkAdmetLlarg = new JCheckBox("Admet préstec llarg");
         panelFormulari.add(chkAdmetLlarg, gbc);
 
-        // Botons del formulari
+        // Botons formulari
         gbc.gridx = 0; gbc.gridy = 4; gbc.gridwidth = 2;
         JPanel panelBotonsForm = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 5));
         btnAfegir = new JButton("➕ Afegir Exemplar");
@@ -107,7 +107,7 @@ public class GestioExemplars extends JDialog {
         panelBotonsForm.add(btnNetejar);
         panelFormulari.add(panelBotonsForm, gbc);
 
-        // ===== PANEL LLISTA (visualització) =====
+        // Panel llista
         JPanel panelLlista = new JPanel(new BorderLayout(5, 5));
         panelLlista.setBorder(BorderFactory.createTitledBorder("Llista d'Exemplars"));
 
@@ -115,7 +115,7 @@ public class GestioExemplars extends JDialog {
         listExemplars = new JList<>(modelLlista);
         listExemplars.setFont(new Font("Monospaced", Font.PLAIN, 12));
 
-        // Custom cell renderer per mostrar disponibilitat
+        // Custom cell renderer per tal de poder mostrar disponibilitat
         listExemplars.setCellRenderer(new DefaultListCellRenderer() {
             @Override
             public Component getListCellRendererComponent(JList<?> list, Object value,
@@ -146,19 +146,19 @@ public class GestioExemplars extends JDialog {
         lblEstat.setForeground(Color.GRAY);
         panelLlista.add(lblEstat, BorderLayout.SOUTH);
 
-        // ===== PANEL BOTONS PRINCIPALS =====
+        // Panel botons principals
         JPanel panelBotons = new JPanel(new FlowLayout(FlowLayout.RIGHT, 10, 5));
         btnTancar = new JButton("❌ Tancar");
         panelBotons.add(btnTancar);
 
-        // Muntar el panell principal
+        // Muntem el panell principal
         panelMain.add(panelFormulari, BorderLayout.NORTH);
         panelMain.add(panelLlista, BorderLayout.CENTER);
         panelMain.add(panelBotons, BorderLayout.SOUTH);
 
         setContentPane(panelMain);
 
-        // Deshabilitar botó afegir inicialment
+        // Deshabilitem el botó afegir inicialment
         btnAfegir.setEnabled(false);
     }
 
@@ -180,7 +180,7 @@ public class GestioExemplars extends JDialog {
         txtTitol.getDocument().addDocumentListener(dl);
         txtAutor.getDocument().addDocumentListener(dl);
 
-        // ActionListener pel botó Afegir
+        // ActionListener botó Afegir
         btnAfegir.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -188,7 +188,7 @@ public class GestioExemplars extends JDialog {
             }
         });
 
-        // ActionListener pel botó Netejar
+        // ActionListener botó Netejar
         btnNetejar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -196,7 +196,7 @@ public class GestioExemplars extends JDialog {
             }
         });
 
-        // ActionListener pel botó Tancar
+        // ActionListener botó Tancar
         btnTancar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -204,7 +204,7 @@ public class GestioExemplars extends JDialog {
             }
         });
 
-        // ListSelectionListener per la llista
+        // ListSelectionListener llista
         listExemplars.addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
@@ -285,7 +285,7 @@ public class GestioExemplars extends JDialog {
     private void actualitzarEstat() {
         int numExemplars = modelLlista.getSize();
 
-        // Calcular exemplars disponibles (sense usar stream)
+        // Calculem exemplars disponibles
         int numDisponibles = 0;
         for (int i = 0; i < modelLlista.getSize(); i++) {
             Exemplar e = modelLlista.getElementAt(i);
@@ -304,8 +304,6 @@ public class GestioExemplars extends JDialog {
         Exemplar e = listExemplars.getSelectedValue();
         if (e != null) {
             String estat = e.isDisponible() ? "Disponible" : "Prestat";
-            // Opcional: mostrar en consola o en una barra d'estat
-            // System.out.println("📖 " + e.getTitol() + " - " + estat);
         }
     }
 }

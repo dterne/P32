@@ -61,11 +61,11 @@ public class GestioPrestecs extends JDialog {
      * Inicialitza tots els components gràfics.
      */
     private void initComponents() {
-        // Panel principal amb BorderLayout
+        // Panel principal
         panelMain = new JPanel(new BorderLayout(10, 10));
         panelMain.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
 
-        // ===== PANEL SUPERIOR (selecció) =====
+        // Panel superior
         JPanel panelSuperior = new JPanel(new GridBagLayout());
         panelSuperior.setBorder(BorderFactory.createTitledBorder("Nou Préstec"));
         GridBagConstraints gbc = new GridBagConstraints();
@@ -113,7 +113,7 @@ public class GestioPrestecs extends JDialog {
         panelBotoAfegir.add(btnAfegir);
         panelSuperior.add(panelBotoAfegir, gbc);
 
-        // ===== PANEL CENTRAL (llista) =====
+        // Panel central
         JPanel panelCentral = new JPanel(new BorderLayout(5, 5));
         panelCentral.setBorder(BorderFactory.createTitledBorder("Llista de Préstecs"));
 
@@ -165,7 +165,7 @@ public class GestioPrestecs extends JDialog {
         lblEstat.setForeground(Color.GRAY);
         panelCentral.add(lblEstat, BorderLayout.SOUTH);
 
-        // ===== PANEL INFERIOR (accions) =====
+        // Panel inferior
         JPanel panelInferior = new JPanel(new BorderLayout(10, 5));
 
         JPanel panelBotonsAccio = new JPanel(new FlowLayout(FlowLayout.CENTER, 15, 5));
@@ -184,7 +184,7 @@ public class GestioPrestecs extends JDialog {
         panelInferior.add(panelBotonsAccio, BorderLayout.CENTER);
         panelInferior.add(panelBotonsTancar, BorderLayout.SOUTH);
 
-        // Muntar el panell principal
+        // Muntem el panell principal
         panelMain.add(panelSuperior, BorderLayout.NORTH);
         panelMain.add(panelCentral, BorderLayout.CENTER);
         panelMain.add(panelInferior, BorderLayout.SOUTH);
@@ -196,7 +196,7 @@ public class GestioPrestecs extends JDialog {
      * Afegeix tots els event listeners.
      */
     private void addEventListeners() {
-        // ActionListener per crear préstec
+        // ActionListener crear préstec
         btnAfegir.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -204,7 +204,7 @@ public class GestioPrestecs extends JDialog {
             }
         });
 
-        // ActionListener per retornar préstec
+        // ActionListener retornar préstec
         btnRetornar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -212,7 +212,7 @@ public class GestioPrestecs extends JDialog {
             }
         });
 
-        // ActionListener per refrescar
+        // ActionListener refrescar
         btnRefrescar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -223,7 +223,7 @@ public class GestioPrestecs extends JDialog {
             }
         });
 
-        // ActionListener pel filtre
+        // ActionListener filtre
         chkNomésNoRetornats.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -231,7 +231,7 @@ public class GestioPrestecs extends JDialog {
             }
         });
 
-        // ActionListener per selecció d'exemplar
+        // ActionListener selecció d'exemplar
         cmbExemplar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -242,7 +242,7 @@ public class GestioPrestecs extends JDialog {
             }
         });
 
-        // ActionListener per selecció d'usuari
+        // ActionListener selecció d'usuari
         cmbUsuari.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -255,7 +255,7 @@ public class GestioPrestecs extends JDialog {
             }
         });
 
-        // ListSelectionListener per la llista de préstecs
+        // ListSelectionListener la llista de préstecs
         listPrestecs.addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
@@ -270,7 +270,7 @@ public class GestioPrestecs extends JDialog {
             }
         });
 
-        // Tancar
+        // Tanquem
         btnTancar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -292,26 +292,26 @@ public class GestioPrestecs extends JDialog {
      * Refresca els comboboxes d'exemplars i usuaris.
      */
     private void refrescarComboboxes() {
-        // Guardar selecció actual si existeix
+        // Guardem selecció actual si existeix
         Exemplar exSeleccionat = (Exemplar) cmbExemplar.getSelectedItem();
         Usuari usSeleccionat = (Usuari) cmbUsuari.getSelectedItem();
 
         cmbExemplar.removeAllItems();
         cmbUsuari.removeAllItems();
 
-        // Afegir només exemplars disponibles
+        // Afegi  només exemplars disponibles
         for (Exemplar e : adaptador.getDades().recuperaExemplars()) {
             if (e.isDisponible()) {
                 cmbExemplar.addItem(e);
             }
         }
 
-        // Afegir tots els usuaris
+        // Afegim tots els usuaris
         for (Usuari u : adaptador.getDades().recuperaUsuaris()) {
             cmbUsuari.addItem(u);
         }
 
-        // Restaurar selecció si era possible
+        // Restaurem selecció si es possible
         if (exSeleccionat != null && exSeleccionat.isDisponible()) {
             cmbExemplar.setSelectedItem(exSeleccionat);
         }
@@ -319,7 +319,7 @@ public class GestioPrestecs extends JDialog {
             cmbUsuari.setSelectedItem(usSeleccionat);
         }
 
-        // Actualitzar informació
+        // Actualitzem informació
         if (cmbExemplar.getItemCount() > 0) {
             Exemplar e = (Exemplar) cmbExemplar.getSelectedItem();
             if (e != null) lblExemplarInfo.setText("Autor: " + e.getAutor());
@@ -377,7 +377,7 @@ public class GestioPrestecs extends JDialog {
                 return;
             }
 
-            // Trobar posicions
+            // Trobem posicions
             int exemplarPos = -1;
             int usuariPos = -1;
 
@@ -407,7 +407,7 @@ public class GestioPrestecs extends JDialog {
                             "🔄 Tipus: " + tipus,
                     "Préstec Creat", JOptionPane.INFORMATION_MESSAGE);
 
-            // Refrescar totes les dades
+            // Refresquem totes les dades
             chkEsLlarg.setSelected(false);
             refrescarDades();
 
@@ -447,7 +447,7 @@ public class GestioPrestecs extends JDialog {
 
             if (confirm != JOptionPane.YES_OPTION) return;
 
-            // Trobar posició
+            // Trobem posició
             int pos = -1;
             ArrayList<Prestec> prestecs = adaptador.getDades().recuperaPrestecs();
             for (int i = 0; i < prestecs.size(); i++) {
@@ -463,7 +463,7 @@ public class GestioPrestecs extends JDialog {
                     "✅ Préstec retornat correctament!",
                     "Retorn Completat", JOptionPane.INFORMATION_MESSAGE);
 
-            // Refrescar dades
+            // Refresquem dades
             refrescarDades();
 
         } catch (BiblioException ex) {
@@ -479,7 +479,7 @@ public class GestioPrestecs extends JDialog {
     private void actualitzarEstat() {
         int total = modelLlista.getSize();
 
-        // Calcular quants estan endarrerits (sense usar stream)
+        // Calculem quants estan endarrerits
         int endarrerits = 0;
         for (int i = 0; i < modelLlista.getSize(); i++) {
             Prestec p = modelLlista.getElementAt(i);

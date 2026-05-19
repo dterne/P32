@@ -21,18 +21,18 @@ import javax.swing.*;
 public class IniciadorBiblioUB {
 
     public static void main(String[] args) {
-        // Executar la interfície gràfica al thread d'esdeveniments de Swing
+        // Executem la interfície gràfica al thread d'esdeveniments de Swing
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
                 try {
-                    // Establir Look and Feel del sistema
+                    // Establim Look and Feel del sistema
                     UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
 
-                // Crear i mostrar la finestra principal
+                // Creem i mostrem la finestra principal
                 AppBiblioUB app = new AppBiblioUB();
                 app.setVisible(true);
             }

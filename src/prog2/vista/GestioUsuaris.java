@@ -57,12 +57,12 @@ public class GestioUsuaris extends JDialog {
     /**
      * Inicialitza tots els components gràfics.
      */
-    private void initComponents() {
+    private void initComponents() { //Inicializa botones y campos de texto
         // Panel principal amb BorderLayout
         panelMain = new JPanel(new BorderLayout(10, 10));
         panelMain.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
 
-        // ===== PANEL FORMULARI (entrada de dades) =====
+        // Panel Formulari
         JPanel panelFormulari = new JPanel(new GridBagLayout());
         panelFormulari.setBorder(BorderFactory.createTitledBorder("Afegir Nou Usuari"));
         GridBagConstraints gbc = new GridBagConstraints();
@@ -106,7 +106,7 @@ public class GestioUsuaris extends JDialog {
         panelBotonsForm.add(btnNetejar);
         panelFormulari.add(panelBotonsForm, gbc);
 
-        // ===== PANEL LLISTA (visualització) =====
+        // Panel llista
         JPanel panelLlista = new JPanel(new BorderLayout(5, 5));
         panelLlista.setBorder(BorderFactory.createTitledBorder("Llista d'Usuaris"));
 
@@ -124,7 +124,7 @@ public class GestioUsuaris extends JDialog {
         lblEstat.setForeground(Color.GRAY);
         panelLlista.add(lblEstat, BorderLayout.SOUTH);
 
-        // ===== PANEL BOTONS PRINCIPALS =====
+        // Panel de botons principal
         JPanel panelBotons = new JPanel(new FlowLayout(FlowLayout.RIGHT, 10, 5));
         btnTancar = new JButton("❌ Tancar");
         panelBotons.add(btnTancar);
@@ -144,7 +144,7 @@ public class GestioUsuaris extends JDialog {
      * Afegeix tots els event listeners.
      */
     private void addEventListeners() {
-        // DocumentListener per validar camps en temps real
+        // DocumentListener per validar camps
         DocumentListener dl = new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent e) { validarCamps(); }
@@ -158,7 +158,7 @@ public class GestioUsuaris extends JDialog {
         txtNom.getDocument().addDocumentListener(dl);
         txtAdreca.getDocument().addDocumentListener(dl);
 
-        // ActionListener pel botó Afegir
+        // ActionListener botó Afegir
         btnAfegir.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -166,7 +166,7 @@ public class GestioUsuaris extends JDialog {
             }
         });
 
-        // ActionListener pel botó Netejar
+        // ActionListener botó Netejar
         btnNetejar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -174,7 +174,7 @@ public class GestioUsuaris extends JDialog {
             }
         });
 
-        // ActionListener pel botó Tancar
+        // ActionListener botó Tancar
         btnTancar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -182,7 +182,7 @@ public class GestioUsuaris extends JDialog {
             }
         });
 
-        // ListSelectionListener per la llista
+        // ListSelectionListener llista
         listUsuaris.addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
@@ -275,8 +275,6 @@ public class GestioUsuaris extends JDialog {
         Usuari u = listUsuaris.getSelectedValue();
         if (u != null) {
             String info = "👤 " + u.getNom() + " | " + u.getEmail();
-            // Opcional: mostrar en una barra d'estat o tooltip
-            // System.out.println(info);
         }
     }
 }
