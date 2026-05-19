@@ -28,14 +28,14 @@ public class GestioExemplars extends JDialog {
     // Components de la interfície
     private JPanel panelMain;
     private JList<Exemplar> listExemplars;
-    private JTextField txtId;
-    private JTextField txtTitol;
-    private JTextField txtAutor;
     private JCheckBox chkAdmetLlarg;
     private JButton btnAfegir;
     private JButton btnTancar;
     private JButton btnNetejar;
     private JLabel lblEstat;
+    private JTextField txtId;
+    private JTextField txtTitol;
+    private JTextField txtAutor;
 
     /**
      * Constructor.

@@ -70,6 +70,8 @@ public class AppBiblioUB extends JFrame {
         btnGestioExemplars = new JButton("📚 Gestió d'Exemplars");
         btnGestioPrestecs = new JButton("🔄 Gestió de Préstecs");
 
+
+
         // Estil dels botons principals
         estilitzarBoto(btnGestioUsuaris);
         estilitzarBoto(btnGestioExemplars);
@@ -92,6 +94,9 @@ public class AppBiblioUB extends JFrame {
         estilitzarBotoSecundari(btnCarregar);
         estilitzarBotoSecundari(btnSortir);
 
+
+
+
         panelInferior.add(btnGuardar);
         panelInferior.add(btnCarregar);
         panelInferior.add(btnSortir);
@@ -112,7 +117,7 @@ public class AppBiblioUB extends JFrame {
     private void estilitzarBoto(JButton boto) {
         boto.setFont(new Font("Arial", Font.BOLD, 14));
         boto.setBackground(new Color(70, 130, 200));
-        boto.setForeground(Color.WHITE);
+        boto.setForeground(Color.BLACK);
         boto.setFocusPainted(false);
         boto.setBorder(BorderFactory.createEmptyBorder(12, 20, 12, 20));
         boto.setCursor(new Cursor(Cursor.HAND_CURSOR));
