@@ -20,7 +20,7 @@ import java.util.Enumeration;
  * @author Ternero David, Tribo Miquel
  * @version 2.0
  */
-public class GestioExemplars extends JDialog {
+public class FrmGestioExemplars extends JDialog {
 
     private Adaptador adaptador;
     private DefaultListModel<Exemplar> modelLlista;
@@ -42,7 +42,7 @@ public class GestioExemplars extends JDialog {
      * @param parent Finestra pare
      * @param adaptador Adaptador amb les dades
      */
-    public GestioExemplars(JFrame parent, Adaptador adaptador) {
+    public FrmGestioExemplars(JFrame parent, Adaptador adaptador) {
         super(parent, "Gestió d'Exemplars", true);
         this.adaptador = adaptador;
 

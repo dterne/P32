@@ -20,7 +20,7 @@ import java.util.ArrayList;
  * @author Ternero David, Tribo Miquel
  * @version 2.0
  */
-public class GestioPrestecs extends JDialog {
+public class FrmGestioPrestecs extends JDialog {
 
     private Adaptador adaptador;
     private DefaultListModel<Prestec> modelLlista;
@@ -45,7 +45,7 @@ public class GestioPrestecs extends JDialog {
      * @param parent Finestra pare
      * @param adaptador Adaptador amb les dades
      */
-    public GestioPrestecs(JFrame parent, Adaptador adaptador) {
+    public FrmGestioPrestecs(JFrame parent, Adaptador adaptador) {
         super(parent, "Gestió de Préstecs", true);
         this.adaptador = adaptador;
 
@@ -217,7 +217,7 @@ public class GestioPrestecs extends JDialog {
             @Override
             public void actionPerformed(ActionEvent e) {
                 refrescarDades();
-                JOptionPane.showMessageDialog(GestioPrestecs.this,
+                JOptionPane.showMessageDialog(FrmGestioPrestecs.this,
                         "✅ Dades actualitzades correctament!",
                         "Refrescar", JOptionPane.INFORMATION_MESSAGE);
             }

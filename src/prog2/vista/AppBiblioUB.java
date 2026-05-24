@@ -183,7 +183,7 @@ public class AppBiblioUB extends JFrame {
      * Obre el diàleg de gestió d'usuaris.
      */
     private void obrirGestioUsuaris() {
-        GestioUsuaris dialog = new GestioUsuaris(this, adaptador);
+        FrmGestioUsuaris dialog = new FrmGestioUsuaris(this, adaptador);
         dialog.setVisible(true);
     }
 
@@ -191,7 +191,7 @@ public class AppBiblioUB extends JFrame {
      * Obre el diàleg de gestió d'exemplars.
      */
     private void obrirGestioExemplars() {
-        GestioExemplars dialog = new GestioExemplars(this, adaptador);
+        FrmGestioExemplars dialog = new FrmGestioExemplars(this, adaptador);
         dialog.setVisible(true);
     }
 
@@ -199,7 +199,7 @@ public class AppBiblioUB extends JFrame {
      * Obre el diàleg de gestió de préstecs.
      */
     private void obrirGestioPrestecs() {
-        GestioPrestecs dialog = new GestioPrestecs(this, adaptador);
+        FrmGestioPrestecs dialog = new FrmGestioPrestecs(this, adaptador);
         dialog.setVisible(true);
     }
 

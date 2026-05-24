@@ -19,7 +19,7 @@ import java.awt.event.ActionListener;
  * @author Ternero David, Tribo Miquel
  * @version 2.0
  */
-public class GestioUsuaris extends JDialog {
+public class FrmGestioUsuaris extends JDialog {
 
     private Adaptador adaptador;
     private DefaultListModel<Usuari> modelLlista;
@@ -41,7 +41,7 @@ public class GestioUsuaris extends JDialog {
      * @param parent Finestra pare
      * @param adaptador Adaptador amb les dades
      */
-    public GestioUsuaris(JFrame parent, Adaptador adaptador) {
+    public FrmGestioUsuaris(JFrame parent, Adaptador adaptador) {
         super(parent, "Gestió d'Usuaris", true);
         this.adaptador = adaptador;
 
