@@ -100,8 +100,8 @@ public class FrmGestioUsuaris extends JDialog {
         // Botons del formulari
         gbc.gridx = 0; gbc.gridy = 4; gbc.gridwidth = 2;
         JPanel panelBotonsForm = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 5));
-        btnAfegir = new JButton("➕ Afegir Usuari");
-        btnNetejar = new JButton("🧹 Netejar Camps");
+        btnAfegir = new JButton("Afegir Usuari");
+        btnNetejar = new JButton("Netejar Camps");
         panelBotonsForm.add(btnAfegir);
         panelBotonsForm.add(btnNetejar);
         panelFormulari.add(panelBotonsForm, gbc);
@@ -126,7 +126,7 @@ public class FrmGestioUsuaris extends JDialog {
 
         // Panel de botons principal
         JPanel panelBotons = new JPanel(new FlowLayout(FlowLayout.RIGHT, 10, 5));
-        btnTancar = new JButton("❌ Tancar");
+        btnTancar = new JButton("Tancar");
         panelBotons.add(btnTancar);
 
         // Muntar el panell principal
@@ -218,10 +218,10 @@ public class FrmGestioUsuaris extends JDialog {
             // Missatge de confirmació
             String tipus = esEstudiant ? "estudiant" : "professor";
             JOptionPane.showMessageDialog(this,
-                    "✅ Usuari afegit correctament!\n" +
-                            "📧 Email: " + email + "\n" +
-                            "👤 Nom: " + nom + "\n" +
-                            "🎓 Tipus: " + tipus,
+                    "Usuari afegit correctament!\n" +
+                            "Email: " + email + "\n" +
+                            "Nom: " + nom + "\n" +
+                            "Tipus: " + tipus,
                     "Usuari Afegit", JOptionPane.INFORMATION_MESSAGE);
 
             netejarCamps();
@@ -230,11 +230,11 @@ public class FrmGestioUsuaris extends JDialog {
 
         } catch (BiblioException ex) {
             JOptionPane.showMessageDialog(this,
-                    "❌ Error: " + ex.getMessage(),
+                    "Error: " + ex.getMessage(),
                     "Error", JOptionPane.ERROR_MESSAGE);
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(this,
-                    "❌ Error inesperat: " + ex.getMessage(),
+                    "Error inesperat: " + ex.getMessage(),
                     "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
@@ -265,7 +265,7 @@ public class FrmGestioUsuaris extends JDialog {
      */
     private void actualitzarEstat() {
         int numUsuaris = modelLlista.getSize();
-        lblEstat.setText("📊 Total usuaris: " + numUsuaris);
+        lblEstat.setText("Total usuaris: " + numUsuaris);
     }
 
     /**
@@ -274,7 +274,7 @@ public class FrmGestioUsuaris extends JDialog {
     private void mostrarInformacioUsuari() {
         Usuari u = listUsuaris.getSelectedValue();
         if (u != null) {
-            String info = "👤 " + u.getNom() + " | " + u.getEmail();
+            String info = u.getNom() + " | " + u.getEmail();
         }
     }
 }

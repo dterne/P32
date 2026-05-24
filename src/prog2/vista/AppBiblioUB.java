@@ -66,9 +66,9 @@ public class AppBiblioUB extends JFrame {
         panelBotons.setBorder(BorderFactory.createEmptyBorder(20, 50, 20, 50));
 
         // Creem botons
-        btnGestioUsuaris = new JButton("👥 Gestió d'Usuaris");
-        btnGestioExemplars = new JButton("📚 Gestió d'Exemplars");
-        btnGestioPrestecs = new JButton("🔄 Gestió de Préstecs");
+        btnGestioUsuaris = new JButton("Gestió d'Usuaris");
+        btnGestioExemplars = new JButton("Gestió d'Exemplars");
+        btnGestioPrestecs = new JButton("Gestió de Préstecs");
 
 
 
@@ -86,9 +86,9 @@ public class AppBiblioUB extends JFrame {
         // Panel inferior per guardar, carregar i sortir
         JPanel panelInferior = new JPanel(new FlowLayout(FlowLayout.CENTER, 15, 10));
 
-        btnGuardar = new JButton("💾 Guardar Dades");
-        btnCarregar = new JButton("📂 Carregar Dades");
-        JButton btnSortir = new JButton("❌ Sortir");
+        btnGuardar = new JButton("Guardar Dades");
+        btnCarregar = new JButton("Carregar Dades");
+        JButton btnSortir = new JButton("Sortir");
 
         estilitzarBotoSecundari(btnGuardar);
         estilitzarBotoSecundari(btnCarregar);
@@ -216,7 +216,7 @@ public class AppBiblioUB extends JFrame {
                 String fitxer = fileChooser.getSelectedFile().getAbsolutePath();
                 adaptador.guardaDades(fitxer);
                 JOptionPane.showMessageDialog(this,
-                        "✅ Dades guardades correctament al fitxer:\n" + fitxer,
+                        "Dades guardades correctament al fitxer:\n" + fitxer,
                         "Guardar Dades", JOptionPane.INFORMATION_MESSAGE);
             } catch (BiblioException ex) {
                 JOptionPane.showMessageDialog(this,
@@ -239,11 +239,11 @@ public class AppBiblioUB extends JFrame {
                 String fitxer = fileChooser.getSelectedFile().getAbsolutePath();
                 adaptador.carregaDades(fitxer);
                 JOptionPane.showMessageDialog(this,
-                        "✅ Dades carregades correctament des del fitxer:\n" + fitxer,
+                        "Dades carregades correctament des del fitxer:\n" + fitxer,
                         "Carregar Dades", JOptionPane.INFORMATION_MESSAGE);
             } catch (BiblioException ex) {
                 JOptionPane.showMessageDialog(this,
-                        "❌ Error en carregar: " + ex.getMessage(),
+                        "Error en carregar: " + ex.getMessage(),
                         "Error", JOptionPane.ERROR_MESSAGE);
             }
         }

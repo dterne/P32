@@ -106,7 +106,7 @@ public class FrmGestioPrestecs extends JDialog {
         // Botó afegir
         gbc.gridx = 0; gbc.gridy = 3; gbc.gridwidth = 3;
         JPanel panelBotoAfegir = new JPanel(new FlowLayout(FlowLayout.CENTER));
-        btnAfegir = new JButton("➕ Crear Préstec");
+        btnAfegir = new JButton("Crear Préstec");
         btnAfegir.setBackground(new Color(70, 130, 200));
         btnAfegir.setForeground(Color.WHITE);
         btnAfegir.setFont(new Font("Arial", Font.BOLD, 12));
@@ -141,10 +141,10 @@ public class FrmGestioPrestecs extends JDialog {
                             p.getExemplar().getTitol() + " - " +
                             p.getUsuari().getNom();
                     if (p.getRetornat()) {
-                        text += " ✅ RETORNAT";
+                        text += " RETORNAT";
                         setForeground(Color.GRAY);
                     } else if (p.prestecEndarrerit()) {
-                        text += " ⚠️ ENDARRERIT!";
+                        text += " ⚠ENDARRERIT!";
                         setForeground(Color.RED);
                     } else {
                         setForeground(isSelected ? Color.WHITE : Color.BLACK);
@@ -172,13 +172,13 @@ public class FrmGestioPrestecs extends JDialog {
         btnRetornar = new JButton("↩️ Retornar Préstec Seleccionat");
         btnRetornar.setBackground(new Color(50, 150, 50));
         btnRetornar.setForeground(Color.WHITE);
-        btnRefrescar = new JButton("🔄 Refrescar Dades");
+        btnRefrescar = new JButton("Refrescar Dades");
 
         panelBotonsAccio.add(btnRetornar);
         panelBotonsAccio.add(btnRefrescar);
 
         JPanel panelBotonsTancar = new JPanel(new FlowLayout(FlowLayout.RIGHT));
-        btnTancar = new JButton("❌ Tancar");
+        btnTancar = new JButton("Tancar");
         panelBotonsTancar.add(btnTancar);
 
         panelInferior.add(panelBotonsAccio, BorderLayout.CENTER);
@@ -218,7 +218,7 @@ public class FrmGestioPrestecs extends JDialog {
             public void actionPerformed(ActionEvent e) {
                 refrescarDades();
                 JOptionPane.showMessageDialog(FrmGestioPrestecs.this,
-                        "✅ Dades actualitzades correctament!",
+                        "Dades actualitzades correctament!",
                         "Refrescar", JOptionPane.INFORMATION_MESSAGE);
             }
         });
@@ -401,10 +401,10 @@ public class FrmGestioPrestecs extends JDialog {
 
             String tipus = esLlarg ? "LLARG" : "NORMAL";
             JOptionPane.showMessageDialog(this,
-                    "✅ Préstec creat correctament!\n" +
-                            "📖 Exemplar: " + exemplar.getTitol() + "\n" +
-                            "👤 Usuari: " + usuari.getNom() + "\n" +
-                            "🔄 Tipus: " + tipus,
+                    "Préstec creat correctament!\n" +
+                            " Exemplar: " + exemplar.getTitol() + "\n" +
+                            "Usuari: " + usuari.getNom() + "\n" +
+                            "Tipus: " + tipus,
                     "Préstec Creat", JOptionPane.INFORMATION_MESSAGE);
 
             // Refresquem totes les dades
@@ -413,7 +413,7 @@ public class FrmGestioPrestecs extends JDialog {
 
         } catch (BiblioException ex) {
             JOptionPane.showMessageDialog(this,
-                    "❌ Error: " + ex.getMessage(),
+                    "Error: " + ex.getMessage(),
                     "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
@@ -426,14 +426,14 @@ public class FrmGestioPrestecs extends JDialog {
             Prestec p = listPrestecs.getSelectedValue();
             if (p == null) {
                 JOptionPane.showMessageDialog(this,
-                        "❌ Selecciona un préstec per retornar!",
+                        "Selecciona un préstec per retornar!",
                         "Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
 
             if (p.getRetornat()) {
                 JOptionPane.showMessageDialog(this,
-                        "❌ Aquest préstec ja ha estat retornat!",
+                        "Aquest préstec ja ha estat retornat!",
                         "Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
@@ -441,8 +441,8 @@ public class FrmGestioPrestecs extends JDialog {
             // Confirmació
             int confirm = JOptionPane.showConfirmDialog(this,
                     "Vols retornar el préstec?\n" +
-                            "📖 Exemplar: " + p.getExemplar().getTitol() + "\n" +
-                            "👤 Usuari: " + p.getUsuari().getNom(),
+                            "Exemplar: " + p.getExemplar().getTitol() + "\n" +
+                            "Usuari: " + p.getUsuari().getNom(),
                     "Confirmar Retorn", JOptionPane.YES_NO_OPTION);
 
             if (confirm != JOptionPane.YES_OPTION) return;
@@ -460,7 +460,7 @@ public class FrmGestioPrestecs extends JDialog {
             adaptador.getDades().retornarPrestec(pos);
 
             JOptionPane.showMessageDialog(this,
-                    "✅ Préstec retornat correctament!",
+                    "Préstec retornat correctament!",
                     "Retorn Completat", JOptionPane.INFORMATION_MESSAGE);
 
             // Refresquem dades
@@ -468,7 +468,7 @@ public class FrmGestioPrestecs extends JDialog {
 
         } catch (BiblioException ex) {
             JOptionPane.showMessageDialog(this,
-                    "❌ Error: " + ex.getMessage(),
+                    "Error: " + ex.getMessage(),
                     "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
@@ -489,6 +489,6 @@ public class FrmGestioPrestecs extends JDialog {
         }
 
         String filtre = chkNomésNoRetornats.isSelected() ? " (només no retornats)" : "";
-        lblEstat.setText("📊 Total préstecs" + filtre + ": " + total + " | ⚠️ Endarrerits: " + endarrerits);
+        lblEstat.setText("Total préstecs" + filtre + ": " + total + " | Endarrerits: " + endarrerits);
     }
 }

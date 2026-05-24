@@ -101,8 +101,8 @@ public class FrmGestioExemplars extends JDialog {
         // Botons formulari
         gbc.gridx = 0; gbc.gridy = 4; gbc.gridwidth = 2;
         JPanel panelBotonsForm = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 5));
-        btnAfegir = new JButton("➕ Afegir Exemplar");
-        btnNetejar = new JButton("🧹 Netejar Camps");
+        btnAfegir = new JButton(" Afegir Exemplar");
+        btnNetejar = new JButton("Netejar Camps");
         panelBotonsForm.add(btnAfegir);
         panelBotonsForm.add(btnNetejar);
         panelFormulari.add(panelBotonsForm, gbc);
@@ -148,7 +148,7 @@ public class FrmGestioExemplars extends JDialog {
 
         // Panel botons principals
         JPanel panelBotons = new JPanel(new FlowLayout(FlowLayout.RIGHT, 10, 5));
-        btnTancar = new JButton("❌ Tancar");
+        btnTancar = new JButton("Tancar");
         panelBotons.add(btnTancar);
 
         // Muntem el panell principal
@@ -240,11 +240,11 @@ public class FrmGestioExemplars extends JDialog {
             // Missatge de confirmació
             String tipus = admetLlarg ? "Sí" : "No";
             JOptionPane.showMessageDialog(this,
-                    "✅ Exemplar afegit correctament!\n" +
-                            "🆔 ID: " + id + "\n" +
-                            "📖 Títol: " + titol + "\n" +
-                            "✍️ Autor: " + autor + "\n" +
-                            "🔁 Admet préstec llarg: " + tipus,
+                    "Exemplar afegit correctament!\n" +
+                            "ID: " + id + "\n" +
+                            "Títol: " + titol + "\n" +
+                            "✍Autor: " + autor + "\n" +
+                            "Admet préstec llarg: " + tipus,
                     "Exemplar Afegit", JOptionPane.INFORMATION_MESSAGE);
 
             netejarCamps();
