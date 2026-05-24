@@ -65,44 +65,12 @@
           <text value="Button"/>
         </properties>
       </component>
-      <component id="e6633" class="javax.swing.JButton" binding="btnRefrescar">
-        <constraints>
-          <grid row="5" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Button"/>
-        </properties>
-      </component>
       <component id="83252" class="javax.swing.JButton" binding="btnTancar">
         <constraints>
           <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Button"/>
-        </properties>
-      </component>
-      <component id="cc7d6" class="javax.swing.JLabel" binding="lblEstat">
-        <constraints>
-          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Exemplar"/>
-        </properties>
-      </component>
-      <component id="77aad" class="javax.swing.JLabel" binding="lblExemplarInfo">
-        <constraints>
-          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Estat"/>
-        </properties>
-      </component>
-      <component id="60bf" class="javax.swing.JLabel" binding="lblUsuariInfo">
-        <constraints>
-          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="UsuariInfo"/>
         </properties>
       </component>
     </children>

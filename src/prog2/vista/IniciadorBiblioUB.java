@@ -18,24 +18,10 @@ import javax.swing.*;
  * @author Ternero David, Tribo Miquel
  * @version 2.0
  */
+
 public class IniciadorBiblioUB {
-
     public static void main(String[] args) {
-        // Executem la interfície gràfica al thread d'esdeveniments de Swing
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    // Establim Look and Feel del sistema
-                    UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-
-                // Creem i mostrem la finestra principal
-                AppBiblioUB app = new AppBiblioUB();
-                app.setVisible(true);
-            }
-        });
+        AppBiblioUB app = new AppBiblioUB();
+        app.setVisible(true);
     }
 }
