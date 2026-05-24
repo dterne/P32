@@ -30,20 +30,20 @@ public class AppBiblioUB extends JFrame {
      * Constructor. Inicialitza la finestra principal i els seus components.
      */
     public AppBiblioUB() {
-        // Inicialitzar l'adaptador
+        // Inicialitzem l'adaptador
         adaptador = new Adaptador();
 
-        // Configurar la finestra
+        // Configurem la finestra
         setTitle("Biblioteca UB - Sistema de Gestió");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(500, 350);
         setLocationRelativeTo(null);
         setResizable(false);
 
-        // Crear la interfície
+        // Creem la interfície
         initComponents();
 
-        // Afegir els listeners
+        // Afegim els listeners
         addEventListeners();
     }
 
@@ -61,14 +61,16 @@ public class AppBiblioUB extends JFrame {
         lblTitol.setBorder(BorderFactory.createEmptyBorder(0, 0, 20, 0));
         panelMain.add(lblTitol, BorderLayout.NORTH);
 
-        // Panel central amb GridLayout per als botons
+        // Panel central amb GridLayout pels botons
         JPanel panelBotons = new JPanel(new GridLayout(3, 1, 10, 15));
         panelBotons.setBorder(BorderFactory.createEmptyBorder(20, 50, 20, 50));
 
-        // Crear botons
+        // Creem botons
         btnGestioUsuaris = new JButton("👥 Gestió d'Usuaris");
         btnGestioExemplars = new JButton("📚 Gestió d'Exemplars");
         btnGestioPrestecs = new JButton("🔄 Gestió de Préstecs");
+
+
 
         // Estil dels botons principals
         estilitzarBoto(btnGestioUsuaris);
@@ -81,7 +83,7 @@ public class AppBiblioUB extends JFrame {
 
         panelMain.add(panelBotons, BorderLayout.CENTER);
 
-        // Panel inferior per guardar/carregar/sortir
+        // Panel inferior per guardar, carregar i sortir
         JPanel panelInferior = new JPanel(new FlowLayout(FlowLayout.CENTER, 15, 10));
 
         btnGuardar = new JButton("💾 Guardar Dades");
@@ -92,13 +94,16 @@ public class AppBiblioUB extends JFrame {
         estilitzarBotoSecundari(btnCarregar);
         estilitzarBotoSecundari(btnSortir);
 
+
+
+
         panelInferior.add(btnGuardar);
         panelInferior.add(btnCarregar);
         panelInferior.add(btnSortir);
 
         panelMain.add(panelInferior, BorderLayout.SOUTH);
 
-        // Afegir el panel a la finestra
+        // Afegim el panel a la finestra
         setContentPane(panelMain);
 
         // Listener per al botó sortir
@@ -112,7 +117,7 @@ public class AppBiblioUB extends JFrame {
     private void estilitzarBoto(JButton boto) {
         boto.setFont(new Font("Arial", Font.BOLD, 14));
         boto.setBackground(new Color(70, 130, 200));
-        boto.setForeground(Color.WHITE);
+        boto.setForeground(Color.BLACK);
         boto.setFocusPainted(false);
         boto.setBorder(BorderFactory.createEmptyBorder(12, 20, 12, 20));
         boto.setCursor(new Cursor(Cursor.HAND_CURSOR));

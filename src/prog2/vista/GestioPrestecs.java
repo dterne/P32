@@ -34,6 +34,7 @@ public class GestioPrestecs extends JDialog {
     private JCheckBox chkNomésNoRetornats;
     private JButton btnAfegir;
     private JButton btnRetornar;
+    private JButton btnRefrescar;
     private JButton btnTancar;
     private JLabel lblEstat;
     private JLabel lblExemplarInfo;
@@ -171,8 +172,10 @@ public class GestioPrestecs extends JDialog {
         btnRetornar = new JButton("↩️ Retornar Préstec Seleccionat");
         btnRetornar.setBackground(new Color(50, 150, 50));
         btnRetornar.setForeground(Color.WHITE);
+        btnRefrescar = new JButton("🔄 Refrescar Dades");
 
         panelBotonsAccio.add(btnRetornar);
+        panelBotonsAccio.add(btnRefrescar);
 
         JPanel panelBotonsTancar = new JPanel(new FlowLayout(FlowLayout.RIGHT));
         btnTancar = new JButton("❌ Tancar");
@@ -187,9 +190,6 @@ public class GestioPrestecs extends JDialog {
         panelMain.add(panelInferior, BorderLayout.SOUTH);
 
         setContentPane(panelMain);
-
-        // Deshabilitar botó retornar inicialment
-        btnRetornar.setEnabled(false);
     }
 
     /**
@@ -209,6 +209,17 @@ public class GestioPrestecs extends JDialog {
             @Override
             public void actionPerformed(ActionEvent e) {
                 retornarPrestec();
+            }
+        });
+
+        // ActionListener per refrescar
+        btnRefrescar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                refrescarDades();
+                JOptionPane.showMessageDialog(GestioPrestecs.this,
+                        "✅ Dades actualitzades correctament!",
+                        "Refrescar", JOptionPane.INFORMATION_MESSAGE);
             }
         });
 
@@ -468,7 +479,7 @@ public class GestioPrestecs extends JDialog {
     private void actualitzarEstat() {
         int total = modelLlista.getSize();
 
-        // Calcular quants estan endarrerits
+        // Calcular quants estan endarrerits (sense usar stream)
         int endarrerits = 0;
         for (int i = 0; i < modelLlista.getSize(); i++) {
             Prestec p = modelLlista.getElementAt(i);
