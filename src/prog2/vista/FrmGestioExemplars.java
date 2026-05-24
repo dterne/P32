@@ -243,7 +243,7 @@ public class FrmGestioExemplars extends JDialog {
                     "Exemplar afegit correctament!\n" +
                             "ID: " + id + "\n" +
                             "Títol: " + titol + "\n" +
-                            "✍Autor: " + autor + "\n" +
+                            "Autor: " + autor + "\n" +
                             "Admet préstec llarg: " + tipus,
                     "Exemplar Afegit", JOptionPane.INFORMATION_MESSAGE);
 
@@ -253,7 +253,7 @@ public class FrmGestioExemplars extends JDialog {
 
         } catch (BiblioException ex) {
             JOptionPane.showMessageDialog(this,
-                    "❌ Error: " + ex.getMessage(),
+                    "Error: " + ex.getMessage(),
                     "Error", JOptionPane.ERROR_MESSAGE);
         }
     }

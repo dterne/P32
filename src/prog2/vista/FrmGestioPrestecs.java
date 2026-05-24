@@ -365,14 +365,14 @@ public class FrmGestioPrestecs extends JDialog {
 
             if (exemplar == null) {
                 JOptionPane.showMessageDialog(this,
-                        "❌ No hi ha exemplars disponibles per prestar!",
+                        "No hi ha exemplars disponibles per prestar!",
                         "Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
 
             if (usuari == null) {
                 JOptionPane.showMessageDialog(this,
-                        "❌ No hi ha usuaris registrats!",
+                        "No hi ha usuaris registrats!",
                         "Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
